@@ -1,41 +1,7 @@
-/******************************************************************************
-
-                              Online C++ Compiler.
-               Code, Compile, Run and Debug C++ program online.
-Write your code in this editor and press "Run" button to compile and execute it.
-
-*******************************************************************************/
-
 #include <iostream>
 #include <math.h>
-#include <assert.h>
+
 using namespace std;
-
-void softmax(float* input, size_t size) {
-
-	assert(0 <= size <= sizeof(input) / sizeof(double));
-
-	int i;
-	double m, sum, constant;
-
-	m = -INFINITY;
-	for (i = 0; i < size; ++i) {
-		if (m < input[i]) {
-			m = input[i];
-		}
-	}
-
-	sum = 0.0;
-	for (i = 0; i < size; ++i) {
-		sum += exp(input[i] - m);
-	}
-
-	constant = m + log(sum);
-	for (i = 0; i < size; ++i) {
-		input[i] = exp(input[i] - constant);
-	}
-
-}
 
 int main()
 {
